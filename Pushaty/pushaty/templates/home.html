@@ -21,7 +21,7 @@
             <li class="text-right list-group-item">No Messages yet</li>
           {% endfor %}
         
-
+          <!-- the code below is used for scrolling to the bottom of the message page so that the users can see the latest messages -->
           <script>
             var chartlist = document.getElementById('msg-list-div');
             chartlist.scrollTop = chartlist.scrollHeight;
@@ -31,9 +31,18 @@
 
     </div>
 
+    <!-- this is the form section -->
+
     <form id="chart-form" method="post" action = "/post">
-      <div id="chat-bottom" class="input-group">   </div>
+      <div id="chat-bottom" class="input-group"> 
+        <input type="text" id ="class-msg" name="chat-msg" class="form-control"/>
+        <span class="input-group-btn">
+          <input class="btn btn-default" id="send" type="submit" value="Send"/>
+        </span>
+      </div>
     </form>
     
   </body>
+
+<script src="{% static 'chat.js' %}"></script>
 </html>
