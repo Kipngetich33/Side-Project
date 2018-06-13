@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from africastalking.africasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
+# from africastalking.africasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
 from django.http import HttpResponse,response
 from . models import Chat
 from django.http import JsonResponse

@@ -17,13 +17,13 @@ $('#chat-form').on('submit',function(event){
     });
 });
 
-// this function gets all the chat messages objects
+// this function gets all the chat messages ob <script src="http:.js"></script>jects
 function getMessages(){
     if(!scrolling){
-        $.get('/messages',function(messages){
+        $.get('/messages/',function(messages){
             $('#msg-list').html(messages);
             var chatlist = document.getElementById('msg-list-div');
-            chatlist.scrollTop = chatlist.scrollHeight()
+            chatlist.scrollTop = chatlist.scrollHeight;
         });
     }
     scrolling = false;
@@ -51,4 +51,39 @@ $(document).ready(function(){
             $('#send').attr('disabled','disabled');
         }
     });
+});
+
+
+// the code below is for for django csrf protection
+
+// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+
+// the second funtion from django csrf
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
 });
