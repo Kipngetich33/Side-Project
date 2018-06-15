@@ -6,9 +6,10 @@ $('#chat-form').on('submit',function(event){
     $.ajax({
         url:'/post/',
         type: 'POST',
-        data: {msgbox: $('#chat-msg').val()},
+        data: {msgbox: $('#chat-msg').val()}, 
 
         success:function(json){
+            alert(data);
             $('#chat-msg').val('');
             $('#msg-list').append('<li class="text-right list-group-item">'+json.msg+'</li>');
             var chatlist = document.getElementById('msg-list-div');

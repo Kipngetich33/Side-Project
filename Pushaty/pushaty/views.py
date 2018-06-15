@@ -7,20 +7,24 @@ from django.http import JsonResponse
 
 # Create your views here.
 
-@login_required(login_url='/accounts/login/')
 def home(request):
     c = Chat.objects.all() 
-    return render(request,'home.html',{'chat':c})
+    current_user = request.user
+    return render(request,'home.html',{'chat':c,"current_user":current_user}) 
 
+@login_required(login_url='/accounts/login/')
 def messages(request):
     c = Chat.objects.all()
-    return render(request,'messages.html',{'chat':c})
+    current_user = 'Vincent'
+    return render(request,'messages.html',{'chat':c,"current_user":current_user})
 
 def post(request):
     if request.method == 'POST':
-        msg = request.POST.get('msgbox',None)
+        # msg = request.POST.get('msgbox',None)
+        msg = request.POST.get('chat-msg')
+        print(msg)
         c = Chat(user = request.user, message = msg)
-        if msg != '':
+        if msg != '': 
             c.save()
             return JsonResponse({'msg':msg, 'user' : c.user.username})
     else:
@@ -28,6 +32,9 @@ def post(request):
 
 
 # the view below is for sending text messages with Africa's talking API
+
+def about(request):
+    return render(request,'about.html')
 
 def send_message(request):
     username = username1
