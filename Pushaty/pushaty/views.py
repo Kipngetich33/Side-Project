@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-# from africastalking.africasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
+from africastalking.AfricasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
 from django.http import HttpResponse,response
 from . models import Chat
 from django.http import JsonResponse
@@ -33,12 +33,11 @@ def post(request):
 
 # the view below is for sending text messages with Africa's talking API
 
-def about(request):
-    return render(request,'about.html')
-
 def send_message(request):
-    username = username1
-    apiKey = apikey1
+
+    # the username and apiKey below does not belong to me i should change it
+    username = 'Nanda'
+    apiKey = 'ccd6a5c49876e24e7408a7f2d5f8d6e04a3a8d56f00d9920874ec94ff656d36b'
 
     to = '0712567583'
     message = 'Test Message'
@@ -61,3 +60,8 @@ def send_message(request):
 
     return HttpResponse(response, content_type='text/plain')
 
+
+
+# the views below are for the profile creation
+def update_profile(request):
+    return render(request,'update_profile.html')

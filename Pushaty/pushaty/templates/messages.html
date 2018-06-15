@@ -12,15 +12,20 @@
   <body>
     <div class="container">
         <h1>Logged In as: {{ current_user }}</h1>
+        <a href="{% url 'home' %}" >Home</a>
         <div id="chat-body" class="panel panel-default">
             <div class="panel-heading"> Chat Box</div>
             <div id="msg-list-div" class="list-group">
               <ul id="msg-list" class="list-group">
                 {% for obj in chat %}
                   {% if obj.user == request.user %}
-                    <li class="text-right list-group-item">{{obj.message}} </li>
+                    <li class="text-right list-group-item">{{obj.message}}
+                        <h6>Me</h6>    
+                    </li>
                   {% else %}
-                    <li  class="text-left list-group-item">{{obj.message}}</li>
+                    <li  class="text-left list-group-item">{{obj.message.user.username}}
+                        <h6>Other</h6>  
+                    </li>
                   {% endif %}
                 {% empty %}
                   <li class="text-right list-group-item">No Messages yet</li>
