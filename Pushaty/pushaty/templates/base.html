@@ -1,0 +1,91 @@
+{% load bootstrap4 %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <title>Chat Panel</title>
+  <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture|Comfortaa|Courgette|Lobster|Marcellus|Pacifico|Philosopher|Rajdhani|Rufina" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="{% static 'js/jquery.js' %}" ></script>
+  <script src="{% static 'js/bootstrapjs.js' %}" ></script>
+
+  {% block styles %}
+    {% bootstrap_css %}
+  {% endblock %}
+
+</head>
+
+<body>
+  <div class="row" style="background-color:#F3F7F6">
+    <div class="col-md-2">
+        <h3 style="text-align:left;font-family: cursive;margin-bottom:20px;margin-top:20px;margin-left:20px;" ><i class="fa fa-align-justify" style="margin-right:10px;"></i>Menu </h3>
+    </div>
+    <div class="col-md-2">
+        
+    </div>
+    <div class="col-md-2">
+        <h3 style="text-align:center;font-family: 'Black And White Picture',sans-serif; font-size:40px;margin:10px; margin-bottom:20px;margin-top:20px;">Pushaty . Will</h3>
+    </div>
+    <div class="col-md-2">
+        
+    </div>
+    <div class="col-md-2">  
+        <h3 style="text-align:right;font-family: cursive;margin-bottom:20px;margin-top:20px;">Login</h3>  
+    </div>
+    <div class="col-md-2" style="background-color:#33B1A0;padding:10px;">
+      <h4 style="color:white;text-align:center;margin-bottom:20px;margin-top:20px;margin-right:20px;">
+        <!-- Submit Your Proposal! -->
+
+        <!-- this is the modal classs -->
+        <a class="uk-button uk-button-default" href="#modal" uk-toggle ><span style="color:white;">Request Help !</span></a>
+        <div id="modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-modal-title">Headline</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <button class="uk-button uk-button-primary" type="button">Save</button>
+                </p>
+            </div>
+        </div>
+        <!-- end of the modal class -->
+      </h4>
+    </div>
+  </div>
+
+  {% block content %}  {%endblock%}
+
+  <!-- this is the footer section -->
+  <div class="container-fluid" style="background-color:#3F3F3F;padding:20px;">
+    <h4 style="text-align:center; color:white; margin-top:20px;margin-bottom:20px;">This website is will allow you to get in touch with Will Pushaty at any time !</h4>
+
+    <!-- this is the social icons section -->
+    <a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a>
+    <a href="" class="uk-icon-button  uk-margin-small-right" uk-icon="facebook"></a>
+    <a href="" class="uk-icon-button" uk-icon="google-plus"></a>
+  </div>
+
+
+  {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+  {% endblock %}
+
+</body>
+
+</html>

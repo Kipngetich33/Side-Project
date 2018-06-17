@@ -1,20 +1,120 @@
+{% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Chat Panel</title>
-    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <script src="{% static 'js/jquery.js' %}" ></script>
-    <script src="{% static 'js/bootstrapjs.js' %}" ></script>
-  </head>
-  <body>
-    <div class="container">
-      <h5>Logged:{{current_user}}</h5>
-      <h5>Messages:</h5>
-    </div>
-  </body>
+{% block content %}
 
-<!-- <script src="{% static 'js/chat.js' %}"></script> -->
-</html>
+<div style="background-color:#6F6660;">
+  <!-- this is the first part of the first section -->
+  <div class="row">
+    <div class="col-md-7"></div>
+    <div class="col-md-3">
+        <h1 style="text-align:center;color:white;font-family: cursive;margin-top:20px;color:white;font-family: 'Black And White Picture',sans-serif;">Skills</h1>
+    </div>
+    <div class="col-md-2"></div>
+    
+  </div>
+  <div class="row">
+    <div class="col-md-6" style="padding-left:100px;">
+        <h4 style="color:white;font-family: cursive;margin-top:30px;"><span style="font-weight:bold;">Welcome {{current_user}}&nbsp;&nbsp;&nbsp;</span> June 14,2018</h4>
+    </div>
+    <!-- <span class="glyphicon" style="font-family: cursive;color:white;font-size:25px; margin-left:100px;margin-top:30px;">&#xe143;&nbsp;&nbsp;&nbsp;Likes</span> -->
+  </div>
+
+  <!-- this is the second part of the first section -->
+  <div class="row" style="padding:30px; padding-left:100px;"> 
+  <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Default</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-primary uk-card-body">
+              <h3 class="uk-card-title">Primary</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-secondary uk-card-body">
+              <h3 class="uk-card-title">Secondary</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+      </div>
+  </div>
+  <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+      <div>
+          <div class="uk-card uk-card-default uk-card-body">
+              <h3 class="uk-card-title">Default</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-primary uk-card-body">
+              <h3 class="uk-card-title">Primary</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+      </div>
+      <div>
+          <div class="uk-card uk-card-secondary uk-card-body">
+              <h3 class="uk-card-title">Secondary</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+      </div>
+  </div>
+  </div>
+
+
+  <!-- this is the lower part of the first section -->
+  <div class="row">
+      <div class="col-md-6" style="padding-left:100px;">
+          <buttom class="btn btn-default" style="background-color: #33B1A0;color:white;margin-bottom:30px;">Contact Pushaty</buttom>
+        </div>
+      <div class="col-md-6" style="padding-left:100px;"></div>
+  </div>
+</div>
+
+<!-- this is the beggining of the second section projects -->
+<div class="row">
+    <div class="col-md-6">
+        <h3></h3>
+    </div>
+    <div class="col-md-6">
+        <h3></h3>
+    </div>
+</div>
+
+
+
+<!-- the dot slide below does not work -->
+<!-- this is the comments section -->
+<div class="row">
+        <div class="uk-position-relative uk-light" uk-slideshow>
+
+            <ul class="uk-slideshow-items">
+                <li>
+                    <img src="{% static 'images/project1.jpeg' %}" alt="" uk-cover style="width:400px;height:400px;">
+                    
+                </li>
+                <li>
+                    <img src="{% static 'images/project1.jpeg' %}" alt="" uk-cover style="width:400px;height:400px;">
+                </li>
+                <li>
+                    <img src="{% static 'images/project1.jpeg' %}" alt="" uk-cover style="width:400px;height:400px;">
+                </li>
+            </ul>
+        
+            <div class="uk-position-bottom-center uk-position-small">
+                <ul class="uk-dotnav">
+                    <li uk-slideshow-item="0"><a href="#">Item 1</a></li>
+                    <li uk-slideshow-item="1"><a href="#">Item 2</a></li>
+                    <li uk-slideshow-item="2"><a href="#">Item 3</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+
+<!-- the dot slider above does not work -->
+
+
+{% endblock %}

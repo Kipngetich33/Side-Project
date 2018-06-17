@@ -37,7 +37,7 @@ $(function(){
     $('msg-list-div').on('scroll', function(){
         scrolling = true;
     })
-    refreshTimer = setInterval(getMessages,3000)
+    refreshTimer = setInterval(getMessages,2000)
 })
 
 // the function below disables the send button whenever input field is empty

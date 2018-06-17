@@ -1,0 +1,41 @@
+<div class="uk-position-relative uk-light" uk-slideshow>
+
+    <ul class="uk-slideshow-items">
+        <li>
+            <img src="../docs/images/photo.jpg" alt="" uk-cover>
+        </li>
+        <li>
+            <img src="../docs/images/dark.jpg" alt="" uk-cover>
+        </li>
+        <li>
+            <img src="../docs/images/size1.jpg" alt="" uk-cover>
+        </li>
+    </ul>
+
+    <div class="uk-position-bottom-center uk-position-small">
+        <ul class="uk-dotnav">
+            <li uk-slideshow-item="0"><a href="#">Item 1</a></li>
+            <li uk-slideshow-item="1"><a href="#">Item 2</a></li>
+            <li uk-slideshow-item="2"><a href="#">Item 3</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<article class="uk-comment">
+    <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+        <div class="uk-width-auto">
+            <img class="uk-comment-avatar" src="../docs/images/avatar.jpg" width="80" height="80" alt="">
+        </div>
+        <div class="uk-width-expand">
+            <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
+            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                <li><a href="#">12 days ago</a></li>
+                <li><a href="#">Reply</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="uk-comment-body">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    </div>
+</article>
