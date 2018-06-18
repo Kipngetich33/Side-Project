@@ -2,7 +2,7 @@
 {% load bootstrap4 %}
 {% load static %}
 {% block content %}
-    <div class="row" style="background-color:#6F6660;">
+    <!-- <div class="row" style="background-color:#6F6660;">
         <div class="container">
             <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3 col-xl-3"></div>
             <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6 col-xl-6">
@@ -14,6 +14,51 @@
                 <p><a href="{% url 'home' %}">Back</a></p>
             </div>
             <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3 col-xl-3"></div>
+        </div>
+    </div> -->
+
+    <!-- this is the second part of help with the UI kit form -->
+    <div class="row" style="background-color:#6F6660;">
+        <div class="container">
+        <form action="/" method="get" target="_blank">
+            <fieldset class="uk-fieldset">
+        
+                <legend class="uk-legend" style="color:white;">Requirements & Details</legend>
+        
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" placeholder="Input"> 
+                </div>
+        
+                <div class="uk-margin">
+                    <select class="uk-select">
+                        <option>Option 01</option>
+                        <option>Option 02</option>
+                    </select>
+                </div>
+        
+                <div class="uk-margin">
+                    <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+                </div>
+        
+                <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                    <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
+                    <label><input class="uk-radio" type="radio" name="radio2"> B</label>
+                </div>
+        
+                <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                    <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+                    <label><input class="uk-checkbox" type="checkbox"> B</label>
+                </div>
+        
+                <div class="uk-margin">
+                    <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
+                </div>
+        
+            </fieldset>
+
+            <!-- Add the submit buttom below -->
+            <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id ="submit-help" type="submit" value="Submit">Submit</button>
+        </form>
         </div>
     </div>
 {% endblock %}
