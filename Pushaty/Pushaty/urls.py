@@ -24,4 +24,8 @@ urlpatterns = [
     # the code below is for the django registration model
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}),
+
+    # the login and logout urls
+    url(r'^login/$', views.login, name='login'),
+    url(r'^logout/$', views.logout, name='logout'),
 ]

@@ -3,7 +3,9 @@ from django.contrib.auth.decorators import login_required
 from africastalking.AfricasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
 from django.http import HttpResponse,response
 from . models import Chat
+from . forms import ProfileUpdateForm, HelpForm
 from django.http import JsonResponse
+
 
 # Create your views here.
 
@@ -11,6 +13,19 @@ def home(request):
     c = Chat.objects.all() 
     current_user = request.user
     return render(request,'home.html',{'chat':c,"current_user":current_user}) 
+
+def help(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = HelpForm(request.POST)
+        if form.is_valid():
+            # get and save data here
+
+            return redirect( home)
+    else:
+        form = HelpForm()
+
+    return render(request,'help.html',{"current_user":current_user,"form":form})
 
 @login_required(login_url='/accounts/login/')
 def messages(request):
@@ -64,4 +79,17 @@ def send_message(request):
 
 # the views below are for the profile creation
 def update_profile(request):
+
+    if request.method == 'POST':
+        # form = ProfileUpdateForm(request.POST)
+        # if form.is_valid():
+        #     new_caption = form.cleaned_data['image_caption']
+        #     update_image.image_caption = new_caption
+        #     update_image.save_image() 
+
+        #     return redirect( more ,image_id)
+        pass
+    else:
+        form = ProfileUpdateForm()
+
     return render(request,'update_profile.html')
