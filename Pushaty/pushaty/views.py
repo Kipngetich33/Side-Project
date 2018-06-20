@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from africastalking.AfricasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
 from django.http import HttpResponse,response
@@ -8,7 +8,7 @@ from django.http import JsonResponse
 
 
 # Create your views here.
-
+redirect
 def home(request):
     c = Chat.objects.all() 
     current_user = request.user
@@ -93,3 +93,13 @@ def update_profile(request):
         form = ProfileUpdateForm()
 
     return render(request,'update_profile.html')
+
+def create_order(request):
+    if request.method == 'POST':
+        data = request.POST['first-input']
+        print(data)
+        
+        # form1 = Schedule(day = 'Monday', course = 'ct', year1 = '1', year2 ='2' ,year3 = '3' ,year4 = '4',period = '7' ,room1 = '100',room2 = '120',room3 = data,room4 = data1)
+        # form1.save()
+        return redirect(home)
+    return redirect(help)

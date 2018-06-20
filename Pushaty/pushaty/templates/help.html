@@ -20,13 +20,14 @@
     <!-- this is the second part of help with the UI kit form -->
     <div class="row" style="background-color:#6F6660;">
         <div class="container">
-        <form action="/" method="get" target="_blank">
+        <form action="/order/" method="post" target="_blank">
+            {% csrf_token %}
             <fieldset class="uk-fieldset">
         
                 <legend class="uk-legend" style="color:white;">Requirements & Details</legend>
         
                 <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Input"> 
+                    <input name = "first-input" id = "first-input" class="uk-input" type="text" placeholder="Input"> 
                 </div>
         
                 <div class="uk-margin">
